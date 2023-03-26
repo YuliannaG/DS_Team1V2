@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Загрузка изображений</title>
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <script src="static/js/main.js"></script>
+  </head>
+  <body>
+    <h1>Загрузите изображение</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <br><br>
+      <input type="submit" value="Загрузить">
+    </form>
+    <br><br>
+    <h2>Список загруженных изображений:</h2>
+    <ul>
+      {% for filename in os.listdir('static/uploads/') %}
+      {% if filename.endswith('.jpg') or filename.endswith('.png') or filename.endswith('.gif') %}
+      <li><a href="{{ url_for('static', filename='uploads/' + filename) }}">{{ filename }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </body>
+</html>
