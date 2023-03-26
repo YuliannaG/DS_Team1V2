@@ -8,6 +8,10 @@ flask = "*"
 keras = "*"
 numpy = "*"
 tensorflow = "*"
+load = "*"
+pillow = "*"
+imageio = {extras = ["pyav"], version = "*"}
+scikit-image = "*"
 
 [dev-packages]
 
