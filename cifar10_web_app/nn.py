@@ -31,7 +31,7 @@ simple_cnn_model.add(Flatten())
 simple_cnn_model.add(Dense(10, activation='softmax'))
 
 simple_cnn_model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
-simple_cnn_model_history = simple_cnn_model.fit(train_x_reshaped, train_y, batch_size=100, epochs=10, validation_data=(test_x_reshaped, test_y))
+simple_cnn_model_history = simple_cnn_model.fit(train_x_reshaped, train_y, batch_size=100, epochs=14, validation_data=(test_x_reshaped, test_y))
 
 
 
